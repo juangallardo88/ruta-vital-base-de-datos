@@ -1,8 +1,8 @@
-// Ruta Vital Cali - 03: datos simulados para pruebas y demostración.
+// Ruta Vital - 03: datos simulados para pruebas y demostración.
 // Uso: mongosh "<MONGODB_URI>" scripts/03-datos-simulados.js
 // ATENCIÓN: borra y vuelve a cargar usuarios, ambulancias, rutas y emergencias.
 //
-// Coordenadas aproximadas de lugares reales de Cali. El tiempo base de cada ruta se calculó
+// Coordenadas aproximadas de lugares reales de San Juan de Pasto (Nariño). El tiempo base de cada ruta se calculó
 // con la distancia en línea recta, un factor de recorrido por las vías indicadas, una velocidad
 // promedio y 2 minutos de salida e ingreso. El backend lo multiplica por el factor de tráfico.
 //
@@ -47,9 +47,9 @@ db.ambulancias.insertMany([
     "codigoInterno": "AMB-01",
     "tipo": "BASICA",
     "ubicacion": {
-      "nombre": "Base Norte - La Flora",
-      "latitud": 3.487,
-      "longitud": -76.525
+      "nombre": "Base Norte - Torobajo",
+      "latitud": 1.23,
+      "longitud": -77.288
     },
     "estado": "DISPONIBLE",
     "activa": true,
@@ -61,9 +61,9 @@ db.ambulancias.insertMany([
     "codigoInterno": "AMB-02",
     "tipo": "MEDICALIZADA",
     "ubicacion": {
-      "nombre": "Base Norte - La Flora",
-      "latitud": 3.487,
-      "longitud": -76.525
+      "nombre": "Base Norte - Torobajo",
+      "latitud": 1.23,
+      "longitud": -77.288
     },
     "estado": "DISPONIBLE",
     "activa": true,
@@ -75,9 +75,9 @@ db.ambulancias.insertMany([
     "codigoInterno": "AMB-03",
     "tipo": "BASICA",
     "ubicacion": {
-      "nombre": "Base Centro - San Fernando",
-      "latitud": 3.438,
-      "longitud": -76.539
+      "nombre": "Base Centro - Las Cuadras",
+      "latitud": 1.2153,
+      "longitud": -77.2828
     },
     "estado": "DISPONIBLE",
     "activa": true,
@@ -89,9 +89,9 @@ db.ambulancias.insertMany([
     "codigoInterno": "AMB-04",
     "tipo": "MEDICALIZADA",
     "ubicacion": {
-      "nombre": "Base Centro - San Fernando",
-      "latitud": 3.438,
-      "longitud": -76.539
+      "nombre": "Base Centro - Las Cuadras",
+      "latitud": 1.2153,
+      "longitud": -77.2828
     },
     "estado": "DISPONIBLE",
     "activa": true,
@@ -103,9 +103,9 @@ db.ambulancias.insertMany([
     "codigoInterno": "AMB-05",
     "tipo": "BASICA",
     "ubicacion": {
-      "nombre": "Base Sur - Ciudad Jardín",
-      "latitud": 3.362,
-      "longitud": -76.534
+      "nombre": "Base Sur - Avenida Panamericana",
+      "latitud": 1.201,
+      "longitud": -77.284
     },
     "estado": "DISPONIBLE",
     "activa": true,
@@ -117,9 +117,9 @@ db.ambulancias.insertMany([
     "codigoInterno": "AMB-06",
     "tipo": "MEDICALIZADA",
     "ubicacion": {
-      "nombre": "Base Sur - Ciudad Jardín",
-      "latitud": 3.362,
-      "longitud": -76.534
+      "nombre": "Base Sur - Avenida Panamericana",
+      "latitud": 1.201,
+      "longitud": -77.284
     },
     "estado": "FUERA_DE_SERVICIO",
     "activa": true,
@@ -130,54 +130,73 @@ db.ambulancias.insertMany([
 db.rutas.insertMany([
   {
     "_id": id("662000000000000000000001"),
-    "nombre": "Autopista Norte - Calle 5",
+    "nombre": "Avenida Panamericana - Avenida Chile",
     "origen": {
-      "nombre": "Centro Comercial Chipichape",
-      "latitud": 3.4763,
-      "longitud": -76.5279
+      "nombre": "Universidad de Nariño - Torobajo",
+      "latitud": 1.2342,
+      "longitud": -77.2853
     },
     "destino": {
-      "nombre": "Hospital Universitario del Valle",
-      "latitud": 3.4305,
-      "longitud": -76.5452
+      "nombre": "Hospital Universitario Departamental de Nariño",
+      "latitud": 1.217,
+      "longitud": -77.266
     },
-    "distanciaKm": 7.3,
-    "tiempoBaseMin": 15.7,
+    "distanciaKm": 4.0,
+    "tiempoBaseMin": 12.0,
     "nivelTrafico": "ALTO",
     "activa": true,
     "_class": "co.edu.ucc.rutavital.modelo.Ruta"
   },
   {
     "_id": id("662000000000000000000002"),
-    "nombre": "Avenida 2N - Carrera 15 - Calle 5",
+    "nombre": "Avenida Champagnat - Calle 22",
     "origen": {
-      "nombre": "Centro Comercial Chipichape",
-      "latitud": 3.4763,
-      "longitud": -76.5279
+      "nombre": "Universidad de Nariño - Torobajo",
+      "latitud": 1.2342,
+      "longitud": -77.2853
     },
     "destino": {
-      "nombre": "Hospital Universitario del Valle",
-      "latitud": 3.4305,
-      "longitud": -76.5452
+      "nombre": "Hospital Universitario Departamental de Nariño",
+      "latitud": 1.217,
+      "longitud": -77.266
     },
-    "distanciaKm": 7.9,
-    "tiempoBaseMin": 17.8,
+    "distanciaKm": 4.2,
+    "tiempoBaseMin": 11.7,
     "nivelTrafico": "BAJO",
     "activa": true,
     "_class": "co.edu.ucc.rutavital.modelo.Ruta"
   },
   {
     "_id": id("662000000000000000000003"),
-    "nombre": "Avenida 6N - Calle 15",
+    "nombre": "Avenida de los Estudiantes",
     "origen": {
-      "nombre": "Centro Comercial Chipichape",
-      "latitud": 3.4763,
-      "longitud": -76.5279
+      "nombre": "Universidad de Nariño - Torobajo",
+      "latitud": 1.2342,
+      "longitud": -77.2853
     },
     "destino": {
-      "nombre": "Clínica de Occidente",
-      "latitud": 3.456,
-      "longitud": -76.5313
+      "nombre": "Hospital Infantil Los Ángeles",
+      "latitud": 1.2163,
+      "longitud": -77.2873
+    },
+    "distanciaKm": 2.7,
+    "tiempoBaseMin": 8.8,
+    "nivelTrafico": "MEDIO",
+    "activa": true,
+    "_class": "co.edu.ucc.rutavital.modelo.Ruta"
+  },
+  {
+    "_id": id("662000000000000000000004"),
+    "nombre": "Avenida Panamericana - Carrera 32",
+    "origen": {
+      "nombre": "Universidad de Nariño - Torobajo",
+      "latitud": 1.2342,
+      "longitud": -77.2853
+    },
+    "destino": {
+      "nombre": "Hospital Infantil Los Ángeles",
+      "latitud": 1.2163,
+      "longitud": -77.2873
     },
     "distanciaKm": 3.0,
     "tiempoBaseMin": 8.9,
@@ -186,249 +205,230 @@ db.rutas.insertMany([
     "_class": "co.edu.ucc.rutavital.modelo.Ruta"
   },
   {
-    "_id": id("662000000000000000000004"),
-    "nombre": "Avenida 3N - Calle 21",
-    "origen": {
-      "nombre": "Centro Comercial Chipichape",
-      "latitud": 3.4763,
-      "longitud": -76.5279
-    },
-    "destino": {
-      "nombre": "Clínica de Occidente",
-      "latitud": 3.456,
-      "longitud": -76.5313
-    },
-    "distanciaKm": 3.3,
-    "tiempoBaseMin": 8.2,
-    "nivelTrafico": "BAJO",
-    "activa": true,
-    "_class": "co.edu.ucc.rutavital.modelo.Ruta"
-  },
-  {
     "_id": id("662000000000000000000005"),
-    "nombre": "Autopista Sur - Carrera 100",
+    "nombre": "Calle 16 - Carrera 43",
     "origen": {
-      "nombre": "Terminal de Transportes de Cali",
-      "latitud": 3.4628,
-      "longitud": -76.5245
+      "nombre": "Centro Comercial Unicentro",
+      "latitud": 1.2073,
+      "longitud": -77.29
     },
     "destino": {
-      "nombre": "Fundación Valle del Lili",
-      "latitud": 3.3724,
-      "longitud": -76.5267
+      "nombre": "Fundación Hospital San Pedro",
+      "latitud": 1.2113,
+      "longitud": -77.2972
     },
-    "distanciaKm": 13.1,
-    "tiempoBaseMin": 21.7,
-    "nivelTrafico": "ALTO",
+    "distanciaKm": 1.3,
+    "tiempoBaseMin": 5.5,
+    "nivelTrafico": "MEDIO",
     "activa": true,
     "_class": "co.edu.ucc.rutavital.modelo.Ruta"
   },
   {
     "_id": id("662000000000000000000006"),
-    "nombre": "Avenida Pasoancho - Carrera 98",
-    "origen": {
-      "nombre": "Terminal de Transportes de Cali",
-      "latitud": 3.4628,
-      "longitud": -76.5245
-    },
-    "destino": {
-      "nombre": "Fundación Valle del Lili",
-      "latitud": 3.3724,
-      "longitud": -76.5267
-    },
-    "distanciaKm": 14.1,
-    "tiempoBaseMin": 24.3,
-    "nivelTrafico": "MEDIO",
-    "activa": true,
-    "_class": "co.edu.ucc.rutavital.modelo.Ruta"
-  },
-  {
-    "_id": id("662000000000000000000007"),
-    "nombre": "Calle 25 - Avenida 2N",
-    "origen": {
-      "nombre": "Terminal de Transportes de Cali",
-      "latitud": 3.4628,
-      "longitud": -76.5245
-    },
-    "destino": {
-      "nombre": "Clínica de Occidente",
-      "latitud": 3.456,
-      "longitud": -76.5313
-    },
-    "distanciaKm": 1.6,
-    "tiempoBaseMin": 6.0,
-    "nivelTrafico": "MEDIO",
-    "activa": true,
-    "_class": "co.edu.ucc.rutavital.modelo.Ruta"
-  },
-  {
-    "_id": id("662000000000000000000008"),
-    "nombre": "Calle 5 - Carrera 39",
+    "nombre": "Avenida Panamericana - Calle 16",
     "origen": {
       "nombre": "Centro Comercial Unicentro",
-      "latitud": 3.3735,
-      "longitud": -76.539
+      "latitud": 1.2073,
+      "longitud": -77.29
     },
     "destino": {
-      "nombre": "Hospital Universitario del Valle",
-      "latitud": 3.4305,
-      "longitud": -76.5452
+      "nombre": "Fundación Hospital San Pedro",
+      "latitud": 1.2113,
+      "longitud": -77.2972
     },
-    "distanciaKm": 8.3,
-    "tiempoBaseMin": 17.6,
+    "distanciaKm": 1.4,
+    "tiempoBaseMin": 5.2,
     "nivelTrafico": "ALTO",
     "activa": true,
     "_class": "co.edu.ucc.rutavital.modelo.Ruta"
   },
   {
-    "_id": id("662000000000000000000009"),
-    "nombre": "Avenida Pasoancho - Carrera 39",
+    "_id": id("662000000000000000000007"),
+    "nombre": "Avenida Panamericana - Avenida Boyacá",
     "origen": {
       "nombre": "Centro Comercial Unicentro",
-      "latitud": 3.3735,
-      "longitud": -76.539
+      "latitud": 1.2073,
+      "longitud": -77.29
     },
     "destino": {
-      "nombre": "Hospital Universitario del Valle",
-      "latitud": 3.4305,
-      "longitud": -76.5452
+      "nombre": "Hospital Universitario Departamental de Nariño",
+      "latitud": 1.217,
+      "longitud": -77.266
     },
-    "distanciaKm": 8.9,
-    "tiempoBaseMin": 17.7,
+    "distanciaKm": 4.0,
+    "tiempoBaseMin": 11.2,
+    "nivelTrafico": "ALTO",
+    "activa": true,
+    "_class": "co.edu.ucc.rutavital.modelo.Ruta"
+  },
+  {
+    "_id": id("662000000000000000000008"),
+    "nombre": "Calle 12 - Avenida Santander - Calle 22",
+    "origen": {
+      "nombre": "Centro Comercial Unicentro",
+      "latitud": 1.2073,
+      "longitud": -77.29
+    },
+    "destino": {
+      "nombre": "Hospital Universitario Departamental de Nariño",
+      "latitud": 1.217,
+      "longitud": -77.266
+    },
+    "distanciaKm": 4.2,
+    "tiempoBaseMin": 12.5,
+    "nivelTrafico": "MEDIO",
+    "activa": true,
+    "_class": "co.edu.ucc.rutavital.modelo.Ruta"
+  },
+  {
+    "_id": id("662000000000000000000009"),
+    "nombre": "Avenida Julián Bucheli - Avenida Chile",
+    "origen": {
+      "nombre": "Estadio Departamental Libertad",
+      "latitud": 1.198,
+      "longitud": -77.2776
+    },
+    "destino": {
+      "nombre": "Hospital Universitario Departamental de Nariño",
+      "latitud": 1.217,
+      "longitud": -77.266
+    },
+    "distanciaKm": 3.5,
+    "tiempoBaseMin": 10.8,
     "nivelTrafico": "MEDIO",
     "activa": true,
     "_class": "co.edu.ucc.rutavital.modelo.Ruta"
   },
   {
     "_id": id("66200000000000000000000a"),
-    "nombre": "Carrera 98 - Calle 16",
+    "nombre": "Avenida Colombia - Calle 22",
     "origen": {
-      "nombre": "Centro Comercial Unicentro",
-      "latitud": 3.3735,
-      "longitud": -76.539
+      "nombre": "Estadio Departamental Libertad",
+      "latitud": 1.198,
+      "longitud": -77.2776
     },
     "destino": {
-      "nombre": "Fundación Valle del Lili",
-      "latitud": 3.3724,
-      "longitud": -76.5267
+      "nombre": "Hospital Universitario Departamental de Nariño",
+      "latitud": 1.217,
+      "longitud": -77.266
     },
-    "distanciaKm": 2.2,
-    "tiempoBaseMin": 6.7,
-    "nivelTrafico": "MEDIO",
-    "activa": true,
-    "_class": "co.edu.ucc.rutavital.modelo.Ruta"
-  },
-  {
-    "_id": id("66200000000000000000000b"),
-    "nombre": "Calle 5 - Autopista Sur",
-    "origen": {
-      "nombre": "Estadio Pascual Guerrero",
-      "latitud": 3.4301,
-      "longitud": -76.5409
-    },
-    "destino": {
-      "nombre": "Fundación Valle del Lili",
-      "latitud": 3.3724,
-      "longitud": -76.5267
-    },
-    "distanciaKm": 8.6,
-    "tiempoBaseMin": 16.3,
-    "nivelTrafico": "ALTO",
-    "activa": true,
-    "_class": "co.edu.ucc.rutavital.modelo.Ruta"
-  },
-  {
-    "_id": id("66200000000000000000000c"),
-    "nombre": "Avenida Roosevelt - Carrera 100",
-    "origen": {
-      "nombre": "Estadio Pascual Guerrero",
-      "latitud": 3.4301,
-      "longitud": -76.5409
-    },
-    "destino": {
-      "nombre": "Fundación Valle del Lili",
-      "latitud": 3.3724,
-      "longitud": -76.5267
-    },
-    "distanciaKm": 8.9,
-    "tiempoBaseMin": 16.1,
+    "distanciaKm": 3.7,
+    "tiempoBaseMin": 10.5,
     "nivelTrafico": "BAJO",
     "activa": true,
     "_class": "co.edu.ucc.rutavital.modelo.Ruta"
   },
   {
-    "_id": id("66200000000000000000000d"),
-    "nombre": "Calle 5 - Carrera 15",
+    "_id": id("66200000000000000000000b"),
+    "nombre": "Avenida Mijitayo - Carrera 43",
     "origen": {
-      "nombre": "Plaza de Caicedo",
-      "latitud": 3.4516,
-      "longitud": -76.532
+      "nombre": "Estadio Departamental Libertad",
+      "latitud": 1.198,
+      "longitud": -77.2776
     },
     "destino": {
-      "nombre": "Hospital Universitario del Valle",
-      "latitud": 3.4305,
-      "longitud": -76.5452
+      "nombre": "Fundación Hospital San Pedro",
+      "latitud": 1.2113,
+      "longitud": -77.2972
     },
-    "distanciaKm": 3.7,
-    "tiempoBaseMin": 10.5,
+    "distanciaKm": 3.8,
+    "tiempoBaseMin": 11.5,
+    "nivelTrafico": "BAJO",
+    "activa": true,
+    "_class": "co.edu.ucc.rutavital.modelo.Ruta"
+  },
+  {
+    "_id": id("66200000000000000000000c"),
+    "nombre": "Calle 19 - Avenida Boyacá",
+    "origen": {
+      "nombre": "Plaza de Nariño",
+      "latitud": 1.214,
+      "longitud": -77.281
+    },
+    "destino": {
+      "nombre": "Hospital Universitario Departamental de Nariño",
+      "latitud": 1.217,
+      "longitud": -77.266
+    },
+    "distanciaKm": 2.4,
+    "tiempoBaseMin": 9.2,
     "nivelTrafico": "ALTO",
     "activa": true,
     "_class": "co.edu.ucc.rutavital.modelo.Ruta"
   },
   {
-    "_id": id("66200000000000000000000e"),
-    "nombre": "Calle 9 - Carrera 39",
+    "_id": id("66200000000000000000000d"),
+    "nombre": "Calle 18 - Carrera 7",
     "origen": {
-      "nombre": "Plaza de Caicedo",
-      "latitud": 3.4516,
-      "longitud": -76.532
+      "nombre": "Plaza de Nariño",
+      "latitud": 1.214,
+      "longitud": -77.281
     },
     "destino": {
-      "nombre": "Hospital Universitario del Valle",
-      "latitud": 3.4305,
-      "longitud": -76.5452
+      "nombre": "Hospital Universitario Departamental de Nariño",
+      "latitud": 1.217,
+      "longitud": -77.266
     },
-    "distanciaKm": 4.0,
-    "tiempoBaseMin": 10.0,
+    "distanciaKm": 2.3,
+    "tiempoBaseMin": 8.9,
+    "nivelTrafico": "MEDIO",
+    "activa": true,
+    "_class": "co.edu.ucc.rutavital.modelo.Ruta"
+  },
+  {
+    "_id": id("66200000000000000000000e"),
+    "nombre": "Calle 20 - Avenida de los Estudiantes",
+    "origen": {
+      "nombre": "Plaza de Nariño",
+      "latitud": 1.214,
+      "longitud": -77.281
+    },
+    "destino": {
+      "nombre": "Hospital Infantil Los Ángeles",
+      "latitud": 1.2163,
+      "longitud": -77.2873
+    },
+    "distanciaKm": 1.1,
+    "tiempoBaseMin": 5.3,
     "nivelTrafico": "MEDIO",
     "activa": true,
     "_class": "co.edu.ucc.rutavital.modelo.Ruta"
   },
   {
     "_id": id("66200000000000000000000f"),
-    "nombre": "Avenida Simón Bolívar - Calle 5",
+    "nombre": "Avenida Idema - Calle 22",
     "origen": {
-      "nombre": "Centro Comercial Jardín Plaza",
-      "latitud": 3.369,
-      "longitud": -76.5274
+      "nombre": "Terminal de Transportes de Pasto",
+      "latitud": 1.2113,
+      "longitud": -77.263
     },
     "destino": {
-      "nombre": "Clínica Imbanaco",
-      "latitud": 3.4262,
-      "longitud": -76.5448
+      "nombre": "Hospital Universitario Departamental de Nariño",
+      "latitud": 1.217,
+      "longitud": -77.266
     },
-    "distanciaKm": 9.0,
-    "tiempoBaseMin": 17.0,
-    "nivelTrafico": "MEDIO",
+    "distanciaKm": 1.0,
+    "tiempoBaseMin": 4.5,
+    "nivelTrafico": "BAJO",
     "activa": true,
     "_class": "co.edu.ucc.rutavital.modelo.Ruta"
   },
   {
     "_id": id("662000000000000000000010"),
-    "nombre": "Carrera 34 - Calle 5",
+    "nombre": "Calle 16 - Avenida Panamericana",
     "origen": {
-      "nombre": "Parque del Perro",
-      "latitud": 3.438,
-      "longitud": -76.542
+      "nombre": "Terminal de Transportes de Pasto",
+      "latitud": 1.2113,
+      "longitud": -77.263
     },
     "destino": {
-      "nombre": "Clínica Imbanaco",
-      "latitud": 3.4262,
-      "longitud": -76.5448
+      "nombre": "Fundación Hospital San Pedro",
+      "latitud": 1.2113,
+      "longitud": -77.2972
     },
-    "distanciaKm": 2.2,
-    "tiempoBaseMin": 8.0,
-    "nivelTrafico": "BAJO",
+    "distanciaKm": 5.3,
+    "tiempoBaseMin": 15.2,
+    "nivelTrafico": "ALTO",
     "activa": true,
     "_class": "co.edu.ucc.rutavital.modelo.Ruta"
   }
@@ -441,20 +441,20 @@ db.emergencias.insertMany([
     "prioridad": "ALTA",
     "tipoRequerido": "BASICA",
     "origen": {
-      "nombre": "Estadio Pascual Guerrero",
-      "latitud": 3.4301,
-      "longitud": -76.5409
+      "nombre": "Estadio Departamental Libertad",
+      "latitud": 1.198,
+      "longitud": -77.2776
     },
     "destino": {
-      "nombre": "Fundación Valle del Lili",
-      "latitud": 3.3724,
-      "longitud": -76.5267
+      "nombre": "Fundación Hospital San Pedro",
+      "latitud": 1.2113,
+      "longitud": -77.2972
     },
     "fechaHora": fecha("2026-11-10T08:15:00-05:00"),
     "estado": "FINALIZADA",
     "operadorId": "660000000000000000000002",
     "ambulanciaId": "661000000000000000000003",
-    "rutaId": "66200000000000000000000c",
+    "rutaId": "66200000000000000000000b",
     "resultado": "Paciente trasladado y entregado en urgencias",
     "tiempoRecorridoMin": 26.0,
     "avances": [
@@ -476,19 +476,19 @@ db.emergencias.insertMany([
     "tipoRequerido": "MEDICALIZADA",
     "origen": {
       "nombre": "Centro Comercial Unicentro",
-      "latitud": 3.3735,
-      "longitud": -76.539
+      "latitud": 1.2073,
+      "longitud": -77.29
     },
     "destino": {
-      "nombre": "Hospital Universitario del Valle",
-      "latitud": 3.4305,
-      "longitud": -76.5452
+      "nombre": "Hospital Universitario Departamental de Nariño",
+      "latitud": 1.217,
+      "longitud": -77.266
     },
     "fechaHora": fecha("2026-11-12T14:40:00-05:00"),
     "estado": "FINALIZADA",
     "operadorId": "660000000000000000000003",
     "ambulanciaId": "661000000000000000000004",
-    "rutaId": "662000000000000000000009",
+    "rutaId": "662000000000000000000008",
     "resultado": "Paciente estabilizado y atendido por cardiología",
     "tiempoRecorridoMin": 32.0,
     "avances": [
@@ -509,20 +509,20 @@ db.emergencias.insertMany([
     "prioridad": "MEDIA",
     "tipoRequerido": "BASICA",
     "origen": {
-      "nombre": "Centro Comercial Chipichape",
-      "latitud": 3.4763,
-      "longitud": -76.5279
+      "nombre": "Universidad de Nariño - Torobajo",
+      "latitud": 1.2342,
+      "longitud": -77.2853
     },
     "destino": {
-      "nombre": "Clínica de Occidente",
-      "latitud": 3.456,
-      "longitud": -76.5313
+      "nombre": "Hospital Infantil Los Ángeles",
+      "latitud": 1.2163,
+      "longitud": -77.2873
     },
     "fechaHora": fecha("2026-11-14T10:05:00-05:00"),
     "estado": "CANCELADA",
     "operadorId": "660000000000000000000002",
     "ambulanciaId": "661000000000000000000001",
-    "rutaId": "662000000000000000000004",
+    "rutaId": "662000000000000000000003",
     "avances": [
       {
         "tipo": "LLEGADA_LUGAR",
@@ -537,14 +537,14 @@ db.emergencias.insertMany([
     "prioridad": "ALTA",
     "tipoRequerido": "BASICA",
     "origen": {
-      "nombre": "Terminal de Transportes de Cali",
-      "latitud": 3.4628,
-      "longitud": -76.5245
+      "nombre": "Terminal de Transportes de Pasto",
+      "latitud": 1.2113,
+      "longitud": -77.263
     },
     "destino": {
-      "nombre": "Fundación Valle del Lili",
-      "latitud": 3.3724,
-      "longitud": -76.5267
+      "nombre": "Hospital Universitario Departamental de Nariño",
+      "latitud": 1.217,
+      "longitud": -77.266
     },
     "fechaHora": fecha("2026-11-16T19:20:00-05:00"),
     "estado": "CANCELADA",
@@ -558,22 +558,22 @@ db.emergencias.insertMany([
     "prioridad": "MEDIA",
     "tipoRequerido": "BASICA",
     "origen": {
-      "nombre": "Parque del Perro",
-      "latitud": 3.438,
-      "longitud": -76.542
+      "nombre": "Plaza de Nariño",
+      "latitud": 1.214,
+      "longitud": -77.281
     },
     "destino": {
-      "nombre": "Clínica Imbanaco",
-      "latitud": 3.4262,
-      "longitud": -76.5448
+      "nombre": "Hospital Infantil Los Ángeles",
+      "latitud": 1.2163,
+      "longitud": -77.2873
     },
     "fechaHora": fecha("2026-11-18T07:50:00-05:00"),
     "estado": "FINALIZADA",
     "operadorId": "660000000000000000000002",
     "ambulanciaId": "661000000000000000000005",
-    "rutaId": "662000000000000000000010",
+    "rutaId": "66200000000000000000000e",
     "resultado": "Paciente atendido en urgencias pediátricas",
-    "tiempoRecorridoMin": 8.0,
+    "tiempoRecorridoMin": 6.9,
     "avances": [],
     "_class": "co.edu.ucc.rutavital.modelo.Emergencia"
   },
@@ -583,14 +583,14 @@ db.emergencias.insertMany([
     "prioridad": "ALTA",
     "tipoRequerido": "MEDICALIZADA",
     "origen": {
-      "nombre": "Plaza de Caicedo",
-      "latitud": 3.4516,
-      "longitud": -76.532
+      "nombre": "Plaza de Nariño",
+      "latitud": 1.214,
+      "longitud": -77.281
     },
     "destino": {
-      "nombre": "Hospital Universitario del Valle",
-      "latitud": 3.4305,
-      "longitud": -76.5452
+      "nombre": "Hospital Universitario Departamental de Nariño",
+      "latitud": 1.217,
+      "longitud": -77.266
     },
     "fechaHora": fecha("2026-11-19T06:30:00-05:00"),
     "estado": "REGISTRADA",

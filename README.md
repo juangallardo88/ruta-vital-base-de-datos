@@ -1,4 +1,4 @@
-# Ruta Vital Cali — Base de datos
+# Ruta Vital — Base de datos
 
 Scripts de MongoDB (mongosh) para crear las colecciones, sus validaciones, los índices y los datos simulados que usa el backend.
 
@@ -21,9 +21,11 @@ mongosh "mongodb+srv://<usuario>:<clave>@<cluster>/rutavital" scripts/02-indices
 mongosh "mongodb+srv://<usuario>:<clave>@<cluster>/rutavital" scripts/03-datos-simulados.js
 ```
 
-1. `01-colecciones.js` crea las colecciones con validación `$jsonSchema` (o la actualiza si ya existen).
+1. `01-colecciones.js` crea las colecciones con validación `$jsonSchema`. Si ya existen, intenta actualizar la validación (eso requiere un usuario con rol `dbAdmin`).
 2. `02-indices.js` crea los índices únicos (con el mismo nombre que crea Spring Data, para no chocar con el backend) y los de consulta.
-3. `03-datos-simulados.js` **borra y recarga** los datos: 3 usuarios, 6 ambulancias, 16 rutas entre lugares de Cali y 6 emergencias de ejemplo para el historial.
+3. `03-datos-simulados.js` **borra y recarga** los datos: 3 usuarios, 6 ambulancias, 16 rutas entre lugares de San Juan de Pasto (coordenadas aproximadas) y 6 emergencias de ejemplo para el historial.
+
+En Windows, `cargar-base-de-datos.bat` descarga mongosh si hace falta y ejecuta los tres scripts. Lee la cadena de conexión del archivo `mongodb-uri.txt`, ubicado en la carpeta que contiene este repositorio (fuera de él, para que nunca se suba a GitHub). El resultado queda en `resultado-carga.log`.
 
 ## Usuarios iniciales
 

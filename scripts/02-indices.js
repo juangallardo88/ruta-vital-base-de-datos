@@ -1,4 +1,4 @@
-// Ruta Vital Cali - 02: índices.
+// Ruta Vital - 02: índices.
 // Uso: mongosh "<MONGODB_URI>" scripts/02-indices.js
 // Los índices únicos llevan el mismo nombre que crea Spring Data (@Indexed), para que
 // el backend no choque con ellos al arrancar.
